@@ -10,7 +10,7 @@ weatherWidget.innerHTML = `
   </div>
   `;
 
-async () => {
+(async () => {
   try {
     const currentPositionGeoData: any = await GetCurrentPosition();
     if (currentPositionGeoData) {
@@ -19,7 +19,7 @@ async () => {
   } catch (error: any) {
     console.error(error.message);
   }
-};
+})();
 
 async function setWeatherData(geoData: any) {
   const weatherData = await getWeatherDataAtCurrentTime(geoData.coords.latitude, geoData.coords.longitude);
